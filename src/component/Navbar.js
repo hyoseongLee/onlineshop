@@ -23,7 +23,7 @@ const Navbar = () => {
             <div> 로그인 </div>
         </div>
 
-        <div>
+        <div className='logo'>
           <img width={100} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCgJkRQ2NZ-_qtLvio9dmys-jpy9JCAKNmDA&s' />
         </div>
 
@@ -32,9 +32,9 @@ const Navbar = () => {
               {menuList.map(menu=><li>{menu}</li>)}
             </ul>
 
-          <div>
+          <div className='input-search'>
             <FontAwesomeIcon icon={faSearch} />
-            <input type='text' />
+            <input type='text' placeholder='검색하기' />
           </div>
         </div>
     </div>

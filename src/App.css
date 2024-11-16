@@ -1,3 +1,41 @@
 body{
     font-family: sans-serif; 
 }
+
+
+.Login-button {
+    display: flex;
+    justify-content: right;
+    margin:10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.Menu-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 20px;
+}
+
+.Menu-list li {
+    text-decoration: none;
+    color:black;
+    margin-left:20px;
+}
+
+.input-search {
+    border-bottom: 1px solid black;
+    display: flex;
+    position: absolute;
+    right: 20px;
+    padding: 5px;
+}
+
+.input-search input {
+    border:none;
+    margin-left:5px;
+}
