@@ -7,6 +7,7 @@ body{
     display: flex;
     justify-content: right;
     margin:10px;
+    cursor: pointer;
 }
 
 .logo {
@@ -19,6 +20,7 @@ body{
     justify-content: center;
     list-style-type: none;
     padding: 20px;
+    cursor: pointer;
 }
 
 .Menu-list li {
