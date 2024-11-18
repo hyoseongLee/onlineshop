@@ -23,6 +23,14 @@ const navigate = useNavigate()
   navigate("/login")
   }
 
+  const search = (event) => {
+    if(event.key === "Enter") {
+      //입력한 검색어를 읽어와서 url을 바꿔준다.
+      let keyword = event.target.value
+      navigate(`/?q=${keyword}`)
+    }
+
+  }
     return (
     <div>
         <div className='Login-button' onClick={goToLogin}>
@@ -41,7 +49,7 @@ const navigate = useNavigate()
 
           <div className='input-search'>
             <FontAwesomeIcon icon={faSearch} />
-            <input type='text' placeholder='검색하기' />
+            <input type='text' placeholder='검색하기' onkeypress={(event)=> search(event)}/>
           </div>
         </div>
     </div>
