@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import { Routes,Route  } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import ProductAll from './page/ProductAll';
 import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
+import PrivateRoute from './component/route/PrivateRoute';
 
 
 //1. 전체상품페이지, 로그인, 상품상세페이지
@@ -21,13 +22,15 @@ import Navbar from './component/Navbar';
 
 
 function App() {
+  const [authenticate, setAuthenticate] = useState(false); //ture면 로그인 false면 로그인 안됨.
   return (
     <div>
-      <Navbar />
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}/>
       <Routes>
         <Route path="/" element={<ProductAll />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/ProductDetail/:id" element={<ProductDetail />} />
+        <Route path="/Login" element={<Login setAuthenticate={setAuthenticate} />} />
+        <Route path="/ProductDetail/:id"
+          element={<PrivateRoute authenticate={authenticate} />} />
       </Routes>
     </div>
   );

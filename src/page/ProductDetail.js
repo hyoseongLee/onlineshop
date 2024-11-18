@@ -1,8 +1,29 @@
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
 const ProductDetail = () => {
+  let { id } = useParams()
+  const [product, setProduct] = useState(null)
+  useEffect(() => {
+    const getProductDetail = async () => {
+      let url = `http://localhost:5000/products/${id}`
+      let response = await fetch(url)
+      let data = await response.json();
+    }
+    getProductDetail()
+  }, [])
+
   return (
-    <div> 상세 상품 페이지 </div>
+    <Container>
+      <Row>
+        <Col className='product-img'><img src={product?.img} /></Col>
+        <Col>
+        <div>{product?.title}</div>
+        <div>{product?.price}</div>
+        <div>{product?.choice}</div>
+        </Col>
+      </Row>
+    </Container>
   )
 };
 
