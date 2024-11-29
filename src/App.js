@@ -19,8 +19,6 @@ import PrivateRoute from './component/route/PrivateRoute';
 //9. 상품을 검색할 수 있다. 
 
 
-
-
 function App() {
   const [authenticate, setAuthenticate] = useState(false); //ture면 로그인 false면 로그인 안됨.
   return (
